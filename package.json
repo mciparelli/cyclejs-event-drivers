@@ -1,0 +1,49 @@
+{
+  "name": "cyclejs-event-drivers",
+  "version": "0.0.0",
+  "description": "cyclejs event drivers",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
+  "keywords": [
+    "cyclejs",
+    "event-drivers"
+  ],
+  "author": "mciparelli@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "@cycle/core": "^6.0.3",
+    "@cycle/dom": "^9.1.0",
+    "@cycle/isolate": "^1.2.0",
+    "rx": "^4.0.8"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browser-run": "^3.0.8",
+    "browserify": "^13.0.0",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^3.1.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.4.0"
+  },
+  "scripts": {
+    "test": "npm run build && browserify test | browser-run | tap-spec",
+    "prebuild": "mkdir -p dist",
+    "lint": "eslint src test",
+    "build": "npm run lint && babel src/index.js -o dist/index.js"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mciparelli/cyclejs-event-drivers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mciparelli/cyclejs-event-drivers/issues"
+  },
+  "homepage": "https://github.com/mciparelli/cyclejs-event-drivers#readme"
+}
